@@ -13,8 +13,8 @@ CUDA_VISIBLE_DEVICES=$gpu python main.py --run_test                         \
                         --edit_attr $guid                                   \
                         --do_train 1                                        \
                         --do_test 1                                         \
-                        --n_train_img 100                                   \
-                        --n_test_img 32                                     \
+                        --n_train_img 10                                   \
+                        --n_test_img 2                                     \
                         --n_iter 5                                          \
                         --bs_train 1                                        \
                         --t_0 999                                           \
@@ -28,8 +28,9 @@ CUDA_VISIBLE_DEVICES=$gpu python main.py --run_test                         \
                         --use_x0_tensor                                     \
                         --hs_coeff_delta_h 1.0                              \
                         --dt_lambda $dt_lambda                              \
-                        --custom_train_dataset_dir "test_images/celeba/train"                \
-                        --custom_test_dataset_dir "test_images/celeba/test"                  \
+                        --model_path "./celebahq_p2.pt"                     \
+                        --custom_train_dataset_dir "./celeba_hq_256"                \
+                        --custom_test_dataset_dir "./celeba_hq_256"                  \
                         --manual_checkpoint_name "smiling_LC_CelebA_HQ_t999_ninv40_ngen40_0.pth" \
                         --add_noise_from_xt                                 \
                         --lpips_addnoise_th 1.2                             \
